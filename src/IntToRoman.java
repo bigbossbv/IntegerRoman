@@ -42,6 +42,8 @@ public class IntToRoman {
         while(i<input.length()){
         if(i<input.length()){
         result= Integer.parseInt(result+romanNumbers.get(toIntValue(input.substring(i,i+2))));
+        }else{
+        result=Integer.parseInt(result+romanNumbers.get(toIntValue(input.substring(i,i+1))));
         }
         }
         return 0;
