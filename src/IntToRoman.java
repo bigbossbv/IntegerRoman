@@ -37,7 +37,18 @@ public class IntToRoman {
     }
 
     private static int romanToInt(String input) {
+        int result=0;
+        int i=0;
+        while(i<input.length()){
+        if(i<input.length()){
+        result= Integer.parseInt(result+romanNumbers.get(toIntValue(input.substring(i,i+2))));
+        }
+        }
         return 0;
+    }
+
+    private static Integer toIntValue(String str) {
+        return null;
     }
 
     private static String integerToRomanNumber(int num) {
