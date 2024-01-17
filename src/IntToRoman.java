@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.logging.Logger;
@@ -40,17 +41,21 @@ public class IntToRoman {
         int result=0;
         int i=0;
         while(i<input.length()){
-        if(i<input.length()){
+        if(i+1<input.length()&&romanNumbers.containsKey(toIntValue(input.substring(i,i+2)))){
         result= Integer.parseInt(result+romanNumbers.get(toIntValue(input.substring(i,i+2))));
         }else{
         result=Integer.parseInt(result+romanNumbers.get(toIntValue(input.substring(i,i+1))));
         }
         }
-        return 0;
+        return result;
     }
 
     private static Integer toIntValue(String str) {
-        return null;
+        return romanNumbers.entrySet().stream()
+                .filter(entry -> entry.getValue().equals(str))
+                .findFirst()
+                .map(Map.Entry::getKey)
+                .orElse(0);
     }
 
     private static String integerToRomanNumber(int num) {
