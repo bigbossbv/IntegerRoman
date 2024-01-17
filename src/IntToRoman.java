@@ -37,6 +37,9 @@ public class IntToRoman {
 
     private static String integerToRomanNumber(int num) {
         int floorValue=romanNumbers.floorKey(num);
-        return romanNumbers.get(floorValue);
+        if(num==floorValue){
+            return romanNumbers.get(num);
+        }
+        return romanNumbers.get(floorValue)+integerToRomanNumber(num-floorValue);
     }
 }
