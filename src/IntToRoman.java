@@ -30,9 +30,14 @@ public class IntToRoman {
             String roman=integerToRomanNumber(num);
             logger.info(num + " in Roman numerals: " + roman);
         }else{
-
+            int integer = romanToInt(input);
+            logger.info(input + " as integer: " + integer);
         }
 
+    }
+
+    private static int romanToInt(String input) {
+        return 0;
     }
 
     private static String integerToRomanNumber(int num) {
